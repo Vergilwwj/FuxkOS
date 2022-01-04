@@ -14,7 +14,7 @@ modules:
 	gcc test_memory.c -o test_memory -Wall
 
 clean distclean:
-	rm -f *.o *.mod.c .*.*.cmd *.ko *.symvers *.order
+	rm -f *.o *.mod.c .*.*.cmd *.ko *.symvers *.order *.mod
 	rm -rf .tmp_versions
 	rm test_memory
 endif
