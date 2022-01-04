@@ -9,7 +9,6 @@
 static int memory_device_major = 0;
 static const char module_name[] = "memory_test";
 static struct class *memory_device_class;
-static struct file *filp = NULL;
 
 static char write_buf[1024] = {0};
 static char read_buf[1024] = "Hey! What's up ?!";
@@ -85,6 +84,8 @@ static int __init memory_test_init(void)
 	
 	memory_device_class = class_create(THIS_MODULE, "memory_test_drv");
 	device_create(memory_device_class, NULL, MKDEV(memory_device_major, 0), NULL, "my_memory_test_drv");
+
+	return 0;
 }
 
 static void __exit memory_test_exit(void)
